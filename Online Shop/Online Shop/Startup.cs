@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Online_Shop.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Online_Shop
 {
@@ -20,6 +21,9 @@ namespace Online_Shop
             services.AddMvc();
             var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=300;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<OnlineShopContext>(options => options.UseSqlServer(connection));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<OnlineShopContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,6 +34,9 @@ namespace Online_Shop
                 app.UseDeveloperExceptionPage();
             }
             app.UseMvcWithDefaultRoute();
+#pragma warning disable CS0618 // Type or member is obsolete
+            app.UseIdentity();
+#pragma warning restore CS0618 // Type or member is obsolete
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
