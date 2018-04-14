@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "51e050d5e96f66cac4040b38237ad9ea0d025edc"
+    "signature": "0b4c2e7ffab90882a908f8d8e346166e1c54ca4c"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
       "Online Shop/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.1",
+          "Microsoft.AspNet.Mvc": "5.2.5-preview1",
           "Microsoft.AspNetCore.All": "2.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
@@ -152,6 +153,44 @@
         },
         "compile": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.5-preview1": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.5-preview1",
+          "Microsoft.AspNet.WebPages": "3.2.5-preview1"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.5-preview1": {
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.5-preview1": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.5-preview1",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.0.1": {
@@ -2449,6 +2488,14 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -4319,6 +4366,27 @@
       "path": "microsoft.aspnet.identity.entityframework/2.2.1",
       "hashPath": "microsoft.aspnet.identity.entityframework.2.2.1.nupkg.sha512"
     },
+    "Microsoft.AspNet.Mvc/5.2.5-preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UI5+m/mMQYEezLQlWdzvSYUdM6sQFU9Udd5FYzWc/Uaq0iRls7wxJoklpAUYd7U4VNHWfP3Ei5BnT6S+PxpYmQ==",
+      "path": "microsoft.aspnet.mvc/5.2.5-preview1",
+      "hashPath": "microsoft.aspnet.mvc.5.2.5-preview1.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/3.2.5-preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bDsYYyIlwOg5RTd8dy0ppFz3V43xS2SxevZVc0v6fyNpBQ/6S53teXvZP3JUTLNeXm+dCYcdtPoUk1xUQiQmKw==",
+      "path": "microsoft.aspnet.razor/3.2.5-preview1",
+      "hashPath": "microsoft.aspnet.razor.3.2.5-preview1.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/3.2.5-preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3AKi3Qm+wZGJiF8gRwwE4yB7x+6WgpDNZaYqO3FeUoGOa8oeJ66nST5XQkF0OxcSTAayE3vqS29Rz1OjNJP9qw==",
+      "path": "microsoft.aspnet.webpages/3.2.5-preview1",
+      "hashPath": "microsoft.aspnet.webpages.3.2.5-preview1.nupkg.sha512"
+    },
     "Microsoft.AspNetCore/2.0.1": {
       "type": "package",
       "serviceable": true,
@@ -5480,6 +5548,13 @@
       "sha512": "sha512-WhYNqXJQqJRUt3XaLAUsKJkZcaAWECbSQ+UBqfGFCYDdAtyUS5L361x8lleQFpan4mu6VN/Ispc3CNu24wVu+w==",
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.0.3",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.0.3.nupkg.sha512"
+    },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
