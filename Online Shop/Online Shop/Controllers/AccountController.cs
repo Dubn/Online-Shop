@@ -18,6 +18,28 @@ namespace Online_Shop.Controllers
         }
 
         [HttpGet]
+        public IActionResult Login()
+        {
+            ViewBag.Title = "Login Page";
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel vm)
+        {
+            if(ModelState.IsValid)
+            {
+                var result = await _signInManger.PasswordSignInAsync(vm.Email, vm.Password, vm.RememberMe, false);
+                if(result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Invalid email or password");
+                return View(vm);
+            }
+            return View(vm);
+        }
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -26,6 +48,7 @@ namespace Online_Shop.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel vm)
         {
+            ViewBag.Title = "Registration Page";
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = vm.Email, Email = vm.Email };
