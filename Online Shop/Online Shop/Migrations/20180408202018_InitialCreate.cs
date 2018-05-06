@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace OnlineShop.Migrations
+namespace Online_Shop.Migrations
 {
     public partial class InitialCreate : Migration
     {

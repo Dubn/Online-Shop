@@ -1,0 +1,21 @@
+﻿@model UserManagmentIndexViewModel
+
+<table>
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>Roles</th>
+			<th>Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var user in Model.Users)
+		{
+			<tr>
+				<td>@user.Email</td>
+				<td>@user.UserName</td>
+				<td><a asp-controller="UserManagment" asp-action="AddRole">Add Role</a></td>
+			</tr>
+		}
+	</tbody>
+</table>

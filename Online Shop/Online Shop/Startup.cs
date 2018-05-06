@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Online_Shop.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Online_Shop.Models;
 
 namespace Online_Shop
 {
@@ -34,13 +29,7 @@ namespace Online_Shop
                 app.UseDeveloperExceptionPage();
             }
             app.UseMvcWithDefaultRoute();
-#pragma warning disable CS0618 // Type or member is obsolete
-            app.UseIdentity();
-#pragma warning restore CS0618 // Type or member is obsolete
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseAuthentication();
         }
     }
 }

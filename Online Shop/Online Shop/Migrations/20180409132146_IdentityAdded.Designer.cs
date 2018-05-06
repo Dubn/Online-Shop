@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using Online_Shop.Models;
 using System;
 
-namespace OnlineShop.Migrations
+namespace Online_Shop.Migrations
 {
     [DbContext(typeof(OnlineShopContext))]
     [Migration("20180409132146_IdentityAdded")]
